@@ -1,12 +1,22 @@
 <html>
 <head>
   <title>Solve Calc the game</title>
+  <meta charset="UTF-8"></meta>
 </head>
 <body>
   <h1>Solve calc the Game</h1>
-  <input type="text" id="desired"></input>
-  <input type="text" id="given"></input>
-  <input type="text" id="try"></input>
+  <div>
+    <label for="desired">Desired</label>
+    <input type="text" id="desired"></input>
+  </div>
+   <div>
+     <label for="given">Given</label>
+     <input type="text" id="given"></input>
+  </div> 
+   <div>
+     <label for="try">Trys</label>
+     <input type="text" id="try"></input>
+    </div>
   <input type="text" id="operands"></input>
   <input type="button" id="calc" value='Calculate' onClick="calculate()"></input>
   <script src="./index.js"></script>
