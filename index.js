@@ -9,14 +9,17 @@ function calculate(){
   }
   operands = operands.split(';');
   operations = [];
-  operants.forEach(element => {
+  operands.forEach(element => {
     if(element.length = 2){
       operations.push({
         operand: element[0],
         value: element[1],
+        toString(){
+          return (element[0]+'|'+element[1]);
+        }
       });
     }
-    if(element.contains('=>')) {
+    if(element.includes('=>')) {
       split = element.split('=>');
       operations.push({
         operand: 'replace',
@@ -25,13 +28,21 @@ function calculate(){
       })
     }
   });
-  possible_ops = [];
+  possible_ops = getAllOperations(operations, trys, 0, new Array(trys));
   for(let i=0; i < trys; i++) {
     for(let l=0; l < operations; l++) {
 
     }
   }
 }
-function getAllOperations(start, others){
-  
+function getAllOperations(operands, len, startPosition, result) {
+  console.log(len)
+  if (len === 0) {
+    console.log(result.toString());
+    return result;
+  }
+  for (let i = startPosition; i <= operands.length-len; i++) {
+    result[result.length-len] = operands[i];
+    getAllOperations(operands, len, i + 1, result);
+  }
 }
