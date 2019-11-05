@@ -2,23 +2,51 @@
 <head>
   <title>Solve Calc the game</title>
   <meta charset="UTF-8"></meta>
+  <link rel="stylesheet" href="./index.css" />
 </head>
 <body>
   <h1>Solve calc the Game</h1>
-  <div>
-    <label for="desired">Desired</label>
-    <input type="text" id="desired"></input>
-  </div>
-   <div>
-     <label for="given">Given</label>
-     <input type="text" id="given"></input>
-  </div> 
-   <div>
-     <label for="try">Trys</label>
-     <input type="text" id="try"></input>
+  <div class="input-wrapper">
+    <div>
+      <label for="desired">Desired</label>
+      <input type="text" id="desired"></input>
     </div>
-  <input type="text" id="operands"></input>
-  <input type="button" id="calc" value='Calculate' onClick="calculate()"></input>
+    <div>
+      <label for="given">Given</label>
+      <input type="text" id="given"></input>
+    </div> 
+    <div>
+      <label for="try">Trys</label>
+      <input type="text" id="try"></input>
+    </div>
+    
+    <div>
+      <label for"operands">Operations</label>
+      <input type="text" id="operands"></input>
+    </div>
+
+    <input type="button" id="calc" value='Calculate' onClick="init()"></input>
+  </div>
+  <div class="buttons">
+      <div class="operands">
+        <input type="button" value='+' onClick="addToInput('+')"></input>
+        <input type="button" value='-' onClick="addToInput('-')"></input>
+        <input type="button" value='*' onClick="addToInput('*')"></input>
+        <input type="button" value='/' onClick="addToInput('/')"></input>
+        <input type="button" value='=>' onClick="addToInput('=>')"></input>
+        <input type="button" value='<<' onClick="addToInput('<<')"></input>
+        <input type="button" value=';' onClick="addToInput(';')"></input>
+      </div>
+      <div class="numbers">
+      </div>
+    </div>
+  </div>
+  <div class="output">
+    Found Routes:
+    <div class="routes">
+      
+    </div>
+  </div>
   <script src="./index.js"></script>
 <body>
 </html>
