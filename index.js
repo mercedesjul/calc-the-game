@@ -91,7 +91,16 @@ function generateOperation(op) {
         return ('A' + op);
       }
     };
-  } else {
+  } else if (op.match(/\^\d{1}/)){
+    return {
+      operand: 'pow',
+      value: op,
+      toString(){
+        return ('^' + op);
+      }
+    };
+  }
+  else {
     alert('unbekannter Operator: \''+ op + '\'!');
   }
 }
@@ -117,30 +126,25 @@ function executeOperation(op, value){
   switch (op.operand) {
     case '+':
       return value + parseInt(op.value);
-      break;
     case '-':
       return value - parseInt(op.value);
-      break;
     case '*':
     case 'x':
     case 'X':
       return value * parseInt(op.value);
-      break;
     case '/':
       return value / parseInt(op.value);
-      break;
     case 'replace':
       return parseInt(value.toString().replace(op.from, op.to));
-      break;
     case 'append':
       return parseInt(value.toString() + op.value);
-      break;
+    case 'pow':
+      return Math.pow(value, op.value);
     case 'delete':
       if (value.toString().length === 1) {
         return 0;
       }
       return parseInt(value.toString().substring(0,value.toString().length-1));
-      break;
     default:
       break;
   }
