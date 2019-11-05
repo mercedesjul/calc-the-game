@@ -5,25 +5,24 @@
   <link rel="stylesheet" href="./index.css" />
 </head>
 <body>
-  <h1>Solve calc the Game</h1>
-  <div class="input-wrapper">
-    <div>
-      <label for="desired">Desired</label>
-      <input type="text" id="desired"></input>
+  <h1 class="headline">Solve Calc the Game</h1>
+  <div class="inputs">
+    <div class="input-wrapper">
+      <label class="label" for="desired">Desired:</label>
+      <input class="input" type="text" id="desired"></input>
     </div>
-    <div>
-      <label for="given">Given</label>
-      <input type="text" id="given"></input>
+    <div class="input-wrapper">
+      <label class="label" for="try">Tries:</label>
+      <input class="input" type="text" id="try"></input>
+    </div>
+    <div class="input-wrapper">
+      <label class="label" for="operands">Operations:</label>
+      <input class="input" type="text" id="operands"></input>
+    </div>
+    <div class="input-wrapper">
+      <label class="label" for="given">Given:</label>
+      <input class="input" type="text" id="given"></input>
     </div> 
-    <div>
-      <label for="try">Trys</label>
-      <input type="text" id="try"></input>
-    </div>
-    
-    <div>
-      <label for"operands">Operations</label>
-      <input type="text" id="operands"></input>
-    </div>
 
     <input type="button" id="calc" value='Calculate' onClick="init()"></input>
   </div>

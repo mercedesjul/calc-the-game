@@ -1,15 +1,33 @@
-h1 {
+.headline {
     text-align: center; 
 }
-.input-wrapper {
-    display: felx;
-    align-content: space-between;
+
+.inputs {
+    display: flex;
+    flex-direction: column;
     width: 65%;
-    margin: auto;
+    margin: 0 auto;
 }
 
-.input-wrapper *{
-    display: inline-block;
+.label {
+    width: 100px;
+}
+
+.input {
+    width: 100px;
+}
+
+
+.operands {
+    display: flex;
+    align-content: space-between;
+    flex-wrap: wrap;
+}
+
+.numbers {
+    display: flex;
+    align-content: space-between;
+    flex-wrap: wrap;
 }
 
 .buttons {
@@ -20,18 +38,6 @@ h1 {
     flex-direction: row;
     box-sizing: border-box;
 }
-
-.operands {
-    display: flex;
-    align-content: space-between;
-    flex-wrap: wrap;
-} 
-.numbers{
-    display: flex;
-    align-content: space-between;
-    flex-wrap: wrap;
-}
-
 .buttons input[type=button]{
     height: 30px;
     width: 30px;

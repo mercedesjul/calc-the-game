@@ -67,7 +67,7 @@ function generateOperation(op) {
           return (op[0] + op.substring(1,op.length));
         }
       };
-  } else if(op.match(/\d=>\d/)){
+  } else if (op.match(/\d=>\d/)){
     return {
       operand: 'replace',
       from: op[0],
@@ -138,8 +138,6 @@ function executeOperation(op, value){
       return parseInt(value.toString().replace(op.from, op.to));
     case 'append':
       return parseInt(value.toString() + op.value);
-    case 'pow':
-      return Math.pow(value, op.value);
     case 'delete':
       if (value.toString().length === 1) {
         return 0;
