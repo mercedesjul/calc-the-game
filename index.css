@@ -1,6 +1,7 @@
 body {
-    width: 65%;
+    width: 85%;
     margin: auto;
+    font-size: 20px;
 }
 .headline {
     text-align: center; 
@@ -17,9 +18,13 @@ body {
 }
 
 .input {
-    width: 100px;
+    width: 100%;
 }
 
+.input-wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
 
 .operands {
     display: flex;
@@ -29,22 +34,23 @@ body {
 
 .numbers {
     display: flex;
-    align-content: space-between;
+    justify-content: space-around;
     flex-wrap: wrap;
 }
 
 .buttons {
     display: flex;
-    align-content: space-between;
+    justify-content: space-around;
     margin: auto;
     flex-direction: row;
     box-sizing: border-box;
 }
 .buttons input[type=button]{
-    height: 30px;
+    height: 60px;
     width: 30px;
-    padding: 5px;
+    padding: 0;
     background: rgba(0, 102, 255, 0.753);
     border: 1px solid rgba(255, 0, 0, 0.623);
     flex-basis: 33%;
+    font-size: 1.2em;
 }

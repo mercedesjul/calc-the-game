@@ -75,7 +75,7 @@ function generateOperation(op) {
       from: op.split('=>')[0],
       to: op.split('=>')[1],
       toString(){
-        return (op[0]+'=>'+op[3]);
+        return (op.split('=>')[0]+'=>'+op.split('=>')[1]);
       }
     };
   } else if (op.match(/<</)) {
@@ -85,7 +85,7 @@ function generateOperation(op) {
         return ('<<');
       }
     };
-  } else if (op.match(/\d{1}/)){
+  } else if (op.match(/^\d{1}/)){
     return {
       operand: 'append',
       value: op,
@@ -96,9 +96,17 @@ function generateOperation(op) {
   } else if (op.match(/\^\d{1}/)){
     return {
       operand: 'pow',
-      value: op,
+      value: op[1],
       toString(){
         return ('^' + op);
+
+      }
+    };
+  } else if (op.match(/\+\/\-/)) {
+    return {
+      operand: 'invert',
+      toString(){
+        return ('+/-');
       }
     };
   }
@@ -145,6 +153,11 @@ function executeOperation(op, value){
         return 0;
       }
       return parseInt(value.toString().substring(0,value.toString().length-1));
+    case 'pow':
+      return Math.abs(Math.pow(value, op.value));
+    case 'invert': {
+      return value * - 1;
+    }
     default:
       break;
   }
