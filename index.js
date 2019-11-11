@@ -73,7 +73,7 @@ function generateOperation(op) {
     return {
       operand: 'replace',
       from: op.split('=>')[0],
-      to: op.split('=>')[0],
+      to: op.split('=>')[1],
       toString(){
         return (op[0]+'=>'+op[3]);
       }
