@@ -1,3 +1,7 @@
+body {
+    width: 65%;
+    margin: auto;
+}
 .headline {
     text-align: center; 
 }
@@ -5,7 +9,6 @@
 .inputs {
     display: flex;
     flex-direction: column;
-    width: 65%;
     margin: 0 auto;
 }
 
@@ -33,7 +36,6 @@
 .buttons {
     display: flex;
     align-content: space-between;
-    width: 65%;
     margin: auto;
     flex-direction: row;
     box-sizing: border-box;

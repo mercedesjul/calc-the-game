@@ -25,11 +25,13 @@ function addToInput(string){
 }
 
 function init (params) {
+
   desired = parseInt(document.querySelector('#desired').value);
   given = parseInt(document.querySelector('#given').value);
   trys = parseInt(document.querySelector('#try').value);
   operands = document.querySelector('#operands').value;
   output = document.querySelector('.routes');
+  output.innerHTML="";
   if (isNaN(desired) || isNaN(given) || isNaN(trys) || operands.length === 0) {
     alert("Alle Felder müssen ausgefüllt sein!");
     return;
@@ -62,16 +64,16 @@ function generateOperation(op) {
   if (op.match(/[\+\-\*xX\/]\d{1,2}/)){
     return {
         operand: op[0],
-        value: parseInt(op.substring(1,op.length)),
+        value: parseInt(op.substring(1, op.length)),
         toString(){
-          return (op[0] + op.substring(1,op.length));
+          return (op[0] + op.substring(1, op.length));
         }
       };
   } else if (op.match(/\d=>\d/)){
     return {
       operand: 'replace',
-      from: op[0],
-      to: op[3],
+      from: op.split('=>')[0],
+      to: op.split('=>')[0],
       toString(){
         return (op[0]+'=>'+op[3]);
       }
