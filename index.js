@@ -61,7 +61,7 @@ function calculate(){
 }
 
 function generateOperation(op) {
-  if (op.match(/[\+\-\*xX\/]\d{1,2}/)){
+  if (op.match(/[\+\-\*xX\/]-?\d{1,2}/)){
     return {
         operand: op[0],
         value: parseInt(op.substring(1, op.length)),
